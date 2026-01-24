@@ -12,6 +12,7 @@
 struct zmk_widget_luna {
     sys_snode_t node;
     lv_obj_t *obj;
+    lv_obj_t *wpm_label;
 };
 
 int zmk_widget_luna_init(struct zmk_widget_luna *widget, lv_obj_t *parent);
