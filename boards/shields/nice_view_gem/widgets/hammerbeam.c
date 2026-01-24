@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <zephyr/kernel.h>
-#include "animation.h"
+#include "hammerbeam.h"
 
 LV_IMG_DECLARE(hammerbeam1);
 LV_IMG_DECLARE(hammerbeam2);
