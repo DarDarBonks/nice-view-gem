@@ -115,7 +115,7 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
 
 
     #if IS_ENABLED(CONFIG_HAMMERBEAM_ANIMATION)
-    	draw_animation(widget->obj);
+    	draw_hammerbeam(widget->obj);
     #else
 	   	lv_obj_t *art = lv_img_create(widget->obj);
 	    lv_img_set_src(art, &right_image);
