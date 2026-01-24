@@ -1,4 +1,6 @@
 # nice-view-gem
+ALSO USING ASSETS FROM [Hammerbeam](https://github.com/GPeye/hammerbeam-slideshow) 
+
 
 ![Preview](https://github.com/m165437/nice-view-gem/blob/main/.github/assets/preview.jpg?raw=true)
 
