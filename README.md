@@ -1,5 +1,6 @@
 # nice-view-gem
-ALSO USING ASSETS FROM [Hammerbeam](https://github.com/GPeye/hammerbeam-slideshow) 
+ALSO USING ASSETS FROM [nice-luffy-gear-five](https://github.com/whoop-t/nice-luffy-gear-five)
+ALSO USING ASSETS FROM [hammerbeam-slideshow](https://github.com/GPeye/hammerbeam-slideshow) 
 
 
 ![Preview](https://github.com/m165437/nice-view-gem/blob/main/.github/assets/preview.jpg?raw=true)
