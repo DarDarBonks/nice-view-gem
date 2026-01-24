@@ -75,7 +75,6 @@ void draw_hammerbeam(lv_obj_t *canvas) {
     lv_animimg_set_duration(art, CONFIG_HAMMERBEAM_ANIMATION_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(art);
-#endif
-
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, 0, 0);
+#endif
 }
