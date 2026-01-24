@@ -18,6 +18,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/usb.h>
 #include <zmk/wpm.h>
 
+#include "../assets/custom_fonts.h"
 #include "battery.h"
 #include "layer.h"
 #include "output.h"
