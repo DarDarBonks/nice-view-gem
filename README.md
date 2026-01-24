@@ -2,6 +2,8 @@
 
 BASED ON [nice-view-gem](https://github.com/M165437/nice-view-gem)
 
+ALSO USING ASSETS FROM [zmk-nice-oled](https://github.com/mctechnology17/zmk-nice-oled)
+
 ALSO USING ASSETS FROM [nice-luffy-gear-five](https://github.com/whoop-t/nice-luffy-gear-five)
 
 ALSO USING ASSETS FROM [hammerbeam-slideshow](https://github.com/GPeye/hammerbeam-slideshow) 
@@ -50,15 +52,12 @@ CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y
 
 Modify the behavior of this shield by adjusting these options in your personal configuration files. For a more detailed explanation, refer to [Configuration in the ZMK documentation](https://zmk.dev/docs/config).
 
-| Option                                     | Type | Description                                                                                                                                                                                                                                                       | Default |
-| ------------------------------------------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| `CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE`     | bool | This shield uses a fixed range for the chart and gauge deflection. If you set this option to `n`, it will switch to a dynamic range, like the default nice!view shield, which dynamically adjusts based on the last 10 WPM values provided by ZMK.                | y       |
-| `CONFIG_NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX` | int  | You can adjust the maximum value of the fixed range to align with your current goal.                                                                                                                                                                              | 100     |
-
 ## Credits
 
-Shoutout to Teenage Engineering for their [TX-6](https://teenage.engineering/products/tx-6), from which the inspiration (and maybe even a few pixel strokes) originated. 😬
+[nice-view-gem](https://github.com/M165437/nice-view-gem)
 
-As for the floating crystal, appreciation goes to the pixel wizardry of Trixelized, who graciously lent their art to this project. 💎
+[zmk-nice-oled](https://github.com/mctechnology17/zmk-nice-oled)
 
-The font, Pixel Operator, is the work of Jayvee Enaguas, kindly shared under a [Creative Commons Zero (CC0) 1.0](https://creativecommons.org/publicdomain/zero/1.0/) license. 🖋️
+[nice-luffy-gear-five](https://github.com/whoop-t/nice-luffy-gear-five)
+
+[hammerbeam-slideshow](https://github.com/GPeye/hammerbeam-slideshow)

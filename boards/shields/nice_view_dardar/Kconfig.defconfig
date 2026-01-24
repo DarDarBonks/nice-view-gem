@@ -53,6 +53,14 @@ config HAMMERBEAM_ANIMATION_MS
 	int "Animation length in milliseconds"
 	default 1200000
 
+config NICE_PERI_VIEW_SHOW_SLEEP_ART_ON_IDLE
+	bool "Show sleep art when keyboard is idle"
+	default n
+
+config NICE_PERI_VIEW_SHOW_SLEEP_ART_ON_SLEEP
+	bool "Show sleep art when keyboard is in sleep mode"
+	default y
+
 if !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 
 config NICE_VIEW_WIDGET_STATUS

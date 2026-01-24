@@ -47,8 +47,17 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     lv_obj_t *canvas = lv_obj_get_child(widget, 1);
     fill_background(canvas);
 
-    // Draw widgets
-    draw_wpm_status(canvas, state);
+    // Draw WPM label only (gauge replaced with luna widget)
+    lv_draw_label_dsc_t label_left_dsc;
+    init_label_dsc(&label_left_dsc, LVGL_FOREGROUND, &pixel_operator_mono, LV_TEXT_ALIGN_LEFT);
+    lv_canvas_draw_text(canvas, 0, 101 + BUFFER_OFFSET_MIDDLE, 25, &label_left_dsc, "WPM");
+
+    lv_draw_label_dsc_t label_dsc_wpm;
+    init_label_dsc(&label_dsc_wpm, LVGL_FOREGROUND, &pixel_operator_mono, LV_TEXT_ALIGN_RIGHT);
+
+    char wpm_text[6] = {};
+    snprintf(wpm_text, sizeof(wpm_text), "%d", state->wpm[9]);
+    lv_canvas_draw_text(canvas, 26, 101 + BUFFER_OFFSET_MIDDLE, 42, &label_dsc_wpm, wpm_text);
 
     // Rotate for horizontal display
     rotate_canvas(canvas, cbuf);
