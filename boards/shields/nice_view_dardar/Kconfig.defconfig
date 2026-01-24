@@ -1,4 +1,4 @@
-if SHIELD_NICE_VIEW_GEM
+if SHIELD_NICE_VIEW_DARDAR
 
 config LV_Z_VDB_SIZE
     default 100
@@ -35,14 +35,6 @@ config NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX
     int "Fixed range maximum for WPM gauge/chart"
     default 100
 
-config NICE_VIEW_GEM_ANIMATION
-    bool "Enable animation on peripheral"
-    default y
-
-config NICE_VIEW_GEM_ANIMATION_MS
-    int "Animation length in milliseconds"
-    default 960
-
 config NICE_VIEW_WIDGET_STATUS
     select LV_USE_LABEL
     select LV_USE_IMG
@@ -68,4 +60,4 @@ config NICE_VIEW_WIDGET_STATUS
 
 endif # !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 
-endif # SHIELD_NICE_VIEW_GEM
+endif # SHIELD_NICE_VIEW_DARDAR
