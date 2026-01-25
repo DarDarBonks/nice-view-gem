@@ -229,8 +229,8 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
     zmk_widget_luna_init(&widget->luna_widget, parent);
     lv_obj_align(zmk_widget_luna_obj(&widget->luna_widget), LV_ALIGN_CENTER, -30, 0);
 
-    zmk_widget_sleep_status_init(&widget->sleep_status_widget, parent);
-    lv_obj_align(zmk_widget_sleep_status_obj(&widget->sleep_status_widget), LV_ALIGN_CENTER, 0, 0);
+    zmk_widget_sleep_status_init(&widget->sleep_status_widget, widget->obj);
+    lv_obj_align(zmk_widget_sleep_status_obj(&widget->sleep_status_widget), LV_ALIGN_TOP_LEFT, 0, 0);
 
     sys_slist_append(&widgets, &widget->node);
     widget_battery_status_init();
