@@ -72,5 +72,5 @@ void draw_luna(lv_obj_t *canvas, const struct status_state *state) {
         frame = 0;
     }
 
-    lv_canvas_draw_img(canvas, 0, 0 + BUFFER_OFFSET_MIDDLE, luna_frames[frame], &img_dsc);
+    lv_canvas_draw_img(canvas, 0, 0, luna_frames[frame], &img_dsc);
 }
