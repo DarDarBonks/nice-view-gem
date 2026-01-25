@@ -11,12 +11,12 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #include "luna.h"
 
-LV_IMG_DECLARE(dog_sit1_90);
-LV_IMG_DECLARE(dog_sit2_90);
-LV_IMG_DECLARE(dog_walk1_90);
-LV_IMG_DECLARE(dog_walk2_90);
-LV_IMG_DECLARE(dog_run1_90);
-LV_IMG_DECLARE(dog_run2_90);
+LV_IMG_DECLARE(dog_sit1);
+LV_IMG_DECLARE(dog_sit2);
+LV_IMG_DECLARE(dog_walk1);
+LV_IMG_DECLARE(dog_walk2);
+LV_IMG_DECLARE(dog_run1);
+LV_IMG_DECLARE(dog_run2);
 
 #define LUNA_FRAME_SIT1  0
 #define LUNA_FRAME_SIT2  1
@@ -26,12 +26,12 @@ LV_IMG_DECLARE(dog_run2_90);
 #define LUNA_FRAME_RUN2  5
 
 static const lv_img_dsc_t *luna_frames[] = {
-    &dog_sit1_90,
-    &dog_sit2_90,
-    &dog_walk1_90,
-    &dog_walk2_90,
-    &dog_run1_90,
-    &dog_run2_90,
+		&dog_sit1,
+    &dog_sit2,
+    &dog_walk1,
+    &dog_walk2,
+    &dog_run1,
+    &dog_run2,
 };
 
 uint8_t get_luna_frame(uint8_t wpm) {
