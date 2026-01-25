@@ -20,6 +20,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #include "battery.h"
 #include "layer.h"
+#include "luna.h"
 #include "output.h"
 #include "profile.h"
 #include "screen.h"
@@ -48,7 +49,10 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     lv_obj_t *canvas = lv_obj_get_child(widget, 1);
     fill_background(canvas);
 
-    // Draw WPM label only (gauge replaced with luna widget)
+    // Draw luna widget
+    draw_luna(canvas, state);
+
+    // Draw WPM label
     lv_draw_label_dsc_t label_left_dsc;
     init_label_dsc(&label_left_dsc, LVGL_FOREGROUND, &pixel_operator_mono, LV_TEXT_ALIGN_LEFT);
     lv_canvas_draw_text(canvas, 0, 101 + BUFFER_OFFSET_MIDDLE, 25, &label_left_dsc, "WPM");
@@ -189,6 +193,7 @@ static void set_wpm_status(struct zmk_widget_screen *widget, struct wpm_status_s
         widget->state.wpm[i] = widget->state.wpm[i + 1];
     }
     widget->state.wpm[9] = state.wpm;
+    widget->state.luna_frame = get_luna_frame(state.wpm);
 
     draw_middle(widget->obj, widget->cbuf2, &widget->state);
 }
@@ -226,10 +231,7 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
     lv_obj_align(bottom, LV_ALIGN_TOP_RIGHT, BUFFER_OFFSET_BOTTOM, 0);
     lv_canvas_set_buffer(bottom, widget->cbuf3, BUFFER_SIZE, BUFFER_SIZE, LV_IMG_CF_TRUE_COLOR);
 
-    zmk_widget_luna_init(&widget->luna_widget, parent);
-    lv_obj_align(zmk_widget_luna_obj(&widget->luna_widget), LV_ALIGN_CENTER, -30, 0);
-
-    zmk_widget_sleep_status_init(&widget->sleep_status_widget, widget->obj);
+    zmk_widget_sleep_status_init(&widget->sleep_status_widget, parent);
     lv_obj_align(zmk_widget_sleep_status_obj(&widget->sleep_status_widget), LV_ALIGN_TOP_LEFT, 0, 0);
 
     sys_slist_append(&widgets, &widget->node);

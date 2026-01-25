@@ -8,12 +8,7 @@
 
 #include <lvgl.h>
 #include <zephyr/kernel.h>
+#include "util.h"
 
-struct zmk_widget_luna {
-    sys_snode_t node;
-    lv_obj_t *obj;
-    lv_obj_t *wpm_label;
-};
-
-int zmk_widget_luna_init(struct zmk_widget_luna *widget, lv_obj_t *parent);
-lv_obj_t *zmk_widget_luna_obj(struct zmk_widget_luna *widget);
+void draw_luna(lv_obj_t *canvas, const struct status_state *state);
+uint8_t get_luna_frame(uint8_t wpm);

@@ -12,6 +12,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/event_manager.h>
 #include <zmk/endpoints.h>
 #include <zmk/keymap.h>
+#include <zmk/activity.h>
 #include <zmk/events/activity_state_changed.h>
 #include "sleep_status.h"
 
@@ -54,7 +55,9 @@ static void sleep_status_update_cb(struct zmk_activity_state_changed ev) {
 
 static struct zmk_activity_state_changed sleep_status_get_state(const zmk_event_t *eh) {
     struct zmk_activity_state_changed *ev = as_zmk_activity_state_changed(eh);
-    return *ev;
+    return (struct zmk_activity_state_changed){
+        .state = (ev != NULL) ? ev->state : zmk_activity_get_state()
+    };
 }
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_sleep_status, struct zmk_activity_state_changed,
@@ -71,9 +74,6 @@ int zmk_widget_sleep_status_init(struct zmk_widget_sleep_status *widget, lv_obj_
     widget->art = lv_img_create(widget->obj);
     lv_img_set_src(widget->art, &zzz_image);
     lv_obj_align(widget->art, LV_ALIGN_CENTER, 0, 0);
-
-    // Temporarily show on startup for testing
-    // lv_obj_add_flag(widget->art, LV_OBJ_FLAG_HIDDEN);
 
     widget_sleep_status_init();
     return 0;
